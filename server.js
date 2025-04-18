@@ -4,11 +4,12 @@ import cors from "cors";
 import chatRoutes from "./routes/chatRoutes.js";
 
 dotenv.config();
-
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+// ✅ This is what connects the route
 app.use("/api/chat", chatRoutes);
 
 app.get("/", (req, res) => {
